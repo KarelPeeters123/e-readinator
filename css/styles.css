@@ -1,0 +1,58 @@
+h1 {
+    display: flex;
+    justify-content: center;
+}
+.main-elements {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+.manipulation-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.middle-elements {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.long-button {
+    padding: 10px;
+    margin: 50px;
+    border-radius: 40%;
+    height: 100px;
+    width: 200px;
+}
+
+.round-button {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
+
+.central-window {
+    margin: 50px;
+    padding: 20px;
+}
+
+.top-window {
+    display: flex;
+    flex-direction: row;
+    border: 5px, solid;
+    border-color: black;
+    width: 100px;
+    height: 20px;
+
+}
+.window-space {
+
+}
+.window-main {
+
+}
