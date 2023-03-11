@@ -2,12 +2,21 @@ html, body {
     max-width: 100%;
     overflow-x: hidden;
     margin: 0px;
+    background-color: rgb(164, 100, 164);
+    background-color: #e5e5f7;
+    opacity: 0.8;
+    background-image:  linear-gradient(rgb(176, 116, 176) 1px, transparent 1px), linear-gradient(to right, rgb(176, 116, 176) 1px,rgb(164, 100, 164) 1px);
+    background-size: 20px 20px;
 }
 
 h1 {
     display: flex;
     justify-content: center;
+    color: bisque;
+    font-size: 50px;
+    font-family:'Courier New', Courier, monospace;
 }
+
 .main-elements {
     display: flex;
     flex-direction: column;
@@ -24,7 +33,7 @@ h1 {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    height: 900px;
+    height: 850px;
 }
 
 .r-button-div {
@@ -44,19 +53,10 @@ h1 {
     border: 5px solid;
     border-color: black;
     width: 500px;
-    height: 20px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    background-color: bisque;
 
-}
-.window-space {
-    display: flex;
-    flex-direction: row;
-    border-left: 5px solid;
-    border-right: 5px solid;
-    border-color: black;
-    width: 500px;
-    height: 20px;
 }
 
 .window-space-bottom {
@@ -68,6 +68,8 @@ h1 {
     height: 20px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    background-color: bisque;
+
 }
 
 .window-main {
@@ -77,23 +79,67 @@ h1 {
     border-right: 5px solid;
     border-color: black;
     width: 500px;
-    height: 50px;
+    height: 100px;
+    background-color: bisque;
+
 }
 
-
+input [type = "file"]{
+    font-size: 20px;
+}
 
 .long-button {
+    appearance: none;
     padding: 10px;
     margin: 50px;
     border-radius: 50px;
     height: 50px;
     width: 200px;
+    border: 2px solid;
+    border-color: black;
+    background-color: rgb(205, 147, 0);
+    box-shadow: 5px 5px black;
+    color: bisque;
+    font-size: large;
 }
 
 .round-button {
+    appearance: none;
     padding: 10px;
     margin: 10px;
     border-radius: 50%;
     height: 90px;
     width: 90px;
+    border: 2px solid;
+    border-color: black;
+    background-color: rgb(205, 147, 0);
+    box-shadow: 5px 5px black;
+    color: bisque;
+    font-size: large;
+
+}
+
+.x-b {
+    background-color:black; 
+    border-radius: 50%; 
+    border-color: black;
+
+}
+
+.x-b2 {
+    background-color:bisque; 
+    border-radius: 50%; 
+    border-color: black;
+}
+
+.x {
+    padding: 2px;
+    margin: 2px;
+    height: 10px;
+    width: 10px;
+}
+
+.choose-file {
+    padding: 30px;
+    font-size: 20px;
 }
