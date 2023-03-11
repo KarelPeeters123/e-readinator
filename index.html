@@ -1,5 +1,55 @@
-<form action="/action_page.php">
-    <input type="file" id="myFile" name="filename">
-</form>
-<p class="output"></p>
-<script type="text/javascript" src="js/buttonListener.js"></script>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>A Basic HTML5 Template</title>
+  <meta name="description" content="A simple HTML5 Template for new projects.">
+  <meta name="author" content="SitePoint">
+
+  <meta property="og:title" content="A Basic HTML5 Template">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/">
+  <meta property="og:description" content="A simple HTML5 Template for new projects.">
+  <meta property="og:image" content="image.png">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+
+<body>
+    <div class="main-elements">
+        <div><h1>e-readinator</h1></div>
+        <div class="middle-elements">
+            <div class="r-button-div"><button class="round-button">Next</button></div>
+            <div class = "central-window">
+                <div class="top-window">
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                    <div></div>
+                </div>
+                <div class="window-space"></div>
+                <div class="window-main">
+                    <form>
+                        <input type="file" id="myFile" name="filename">
+                    </form>
+                    <p class="output"></p>
+                </div>
+                <div class="window-space-bottom"></div>
+            </div>
+            <div class="r-button-div"><button class="round-button">Random</button></div>
+        </div>
+        <div class="manipulation-buttons">
+            <div><button class="long-button">easy</button></div>
+            <div><button class="long-button">medium</button></div>
+            <div><button class="long-button">hard</button></div>
+        </div>
+    </div>
+  <script type="text/javascript" src="js/manipulations.js"></script>
+  <script type="text/javascript" src="js/buttonListener.js"></script>
+</body>
+</html>

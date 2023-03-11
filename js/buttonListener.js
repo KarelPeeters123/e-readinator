@@ -1,5 +1,6 @@
 const fileSelector = document.getElementById('myFile');
 const content = document.querySelector(".output");
+console.log("test");
 fileSelector.addEventListener('change', (event) => {
     const fileList = event.target.files;
     console.log(fileList[0].type);
