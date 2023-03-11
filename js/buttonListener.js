@@ -13,11 +13,14 @@ fileSelector[0].addEventListener('change', (event) => {
 function readFile(file) {
     var fileReader=new FileReader();
 
-   fileReader.onload=function(){
+    fileReader.onload=function(){
         $('form').remove();
-      content.textContent=applyManipulations(fileReader.result);
+        let windowMain = $(".window-main");
+        windowMain.removeClass("window-main");
+        windowMain.addClass("window-main-filled");
+        content.textContent = applyManipulations(fileReader.result);
 
-   }
+    }
 
    fileReader.readAsText(file);
 }

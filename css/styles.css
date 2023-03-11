@@ -87,6 +87,17 @@ h1 {
     background-color: bisque;
 
 }
+.window-main-filled {
+    display: flex;
+    flex-direction: row;
+    border-left: 5px solid;
+    border-right: 5px solid;
+    border-color: black;
+    width: 500px;
+    height: 500px;
+    overflow-y: scroll;
+    background-color: bisque;
+}
 
 input [type = "file"]{
     font-size: 20px;
