@@ -20,6 +20,9 @@ function readFile(file) {
    fileReader.readAsText(file);
 }
 function applyManipulations(text) {
-    let newText = addBonusWords(text);
+    let newText = text;
+    newText = addBonusWords(newText);
+    newText = randCapital(newText, 5);
+    newText = mixLetters(newText, 5);
     return newText;
 }
