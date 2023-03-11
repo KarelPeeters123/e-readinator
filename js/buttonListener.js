@@ -13,9 +13,13 @@ function readFile(file) {
 
    fileReader.onload=function(){
 
-      content.textContent=fileReader.result;
+      content.textContent=applyManipulations(fileReader.result);
 
    }
 
    fileReader.readAsText(file);
+}
+function applyManipulations(text) {
+    let newText = addBonusWords(text);
+    return newText;
 }
