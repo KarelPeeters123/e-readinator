@@ -1,7 +1,9 @@
-const fileSelector = document.getElementById('myFile');
+console.log("start");
+let fileSelector = $('#myFile');
+console.log(fileSelector)
 const content = document.querySelector(".output");
 console.log("test");
-fileSelector.addEventListener('change', (event) => {
+fileSelector[0].addEventListener('change', (event) => {
     const fileList = event.target.files;
     console.log(fileList[0].type);
     if (fileList[0].type === "text/plain") {
@@ -12,7 +14,7 @@ function readFile(file) {
     var fileReader=new FileReader();
 
    fileReader.onload=function(){
-
+        $('form').remove();
       content.textContent=applyManipulations(fileReader.result);
 
    }
@@ -22,7 +24,7 @@ function readFile(file) {
 function applyManipulations(text) {
     let newText = text;
     newText = addBonusWords(newText);
-    newText = randCapital(newText, 5);
-    newText = mixLetters(newText, 5);
+    newText = randCapital(newText, 15);
+    newText = mixLetters(newText, 15);
     return newText;
 }
