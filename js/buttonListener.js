@@ -1,7 +1,7 @@
 console.log("start");
 let fileSelector = $('#myFile');
 console.log(fileSelector)
-const content = document.querySelector(".output");
+const content = $(".output");
 console.log("test");
 fileSelector[0].addEventListener('change', (event) => {
     const fileList = event.target.files;
@@ -18,8 +18,7 @@ function readFile(file) {
         let windowMain = $(".window-main");
         windowMain.removeClass("window-main");
         windowMain.addClass("window-main-filled");
-        content.textContent = applyManipulations(fileReader.result);
-
+        addSpans(content, applyManipulations(fileReader.result));
     }
 
    fileReader.readAsText(file);
@@ -31,3 +30,8 @@ function applyManipulations(text) {
     newText = mixLetters(newText, 15);
     return newText;
 }
+function addSpans(element, text) {
+    for (const character of text) {
+        element.append($(`<span></span>`).text(character))
+    }
+} 
