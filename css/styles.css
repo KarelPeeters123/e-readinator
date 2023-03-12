@@ -50,7 +50,6 @@ h1 {
 .central-window {
     margin: 10px;
     padding: 20px;
-    padding-top: 250px;
 }
 
 .top-window {
@@ -96,7 +95,7 @@ h1 {
     border-right: 5px solid;
     border-color: black;
     width: 500px;
-    height: 500px;
+    height: 750px;
     overflow-y: scroll;
     background-color: bisque;
 }
