@@ -1,6 +1,8 @@
+console.log("start");
 let fileSelector = $('#myFile');
+console.log(fileSelector)
 const content = $(".output");
-let originalText = ""
+console.log("test");
 fileSelector[0].addEventListener('change', (event) => {
     const fileList = event.target.files;
     console.log(fileList[0].type);
@@ -16,18 +18,13 @@ function readFile(file) {
         let windowMain = $(".window-main");
         windowMain.removeClass("window-main");
         windowMain.addClass("window-main-filled");
-
-        localStorage.setItem("text", fileReader.result);
-        originalText = fileReader.result;
         addSpans(content, applyManipulations(fileReader.result));
     }
 
    fileReader.readAsText(file);
-   console.log("TEST", originalText);
 }
 function applyManipulations(text) {
     let newText = text;
-    newText = addEmoji(newText);
     newText = addBonusWords(newText);
     newText = randCapital(newText, 15);
     newText = mixLetters(newText, 15);
@@ -37,18 +34,55 @@ function addSpans(element, text) {
     for (const character of text) {
         let span = $(`<span></span>`).text(character)
         addBackgroundColor(span);
-        addColor(span);
         getFontWeight(span)
         element.append(span)
     }
 } 
+
+function addMediumSpans(element, text, x) {
+    for (const character of text) {
+        let span = $(`<span></span>`).text(character)
+
+        if (x == 1) {
+            // all under manipulations
+        }
+        else if (x == 2) {
+            getFontWeight(span)
+            addBackgroundColor(span);
+            addFontFamily(spans)
+        }
+        else if (x == 3) {
+            // all under manipulations
+        }
+    }
+} 
+
+function applyMediumManipulations(text, x) {
+    let newText = text;
+
+    if (x == 1) {
+        // linespace
+    }
+    else if (x == 2) {
+        // all in span
+    }
+    else if (x == 3) {
+        newText = addBonusWords(newText);
+        newText = mixLetters(newText, 15);
+        newText = randCapital(newText, 15);
+        return newText;
+    }
+
+    element.append(span)
+
+    if (x == 1) {
+        element.append($("<br"));
+    }
+}
+
 function addBackgroundColor(element) {
     let rgb = threeRandomNumbers();
     element.css("background-color", `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`);
-}
-function addColor(element) {
-    let rgb = threeRandomNumbers();
-    element.css("color", `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`);
 }
 function getFontWeight(element){
     
