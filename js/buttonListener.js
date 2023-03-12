@@ -17,7 +17,7 @@ function readFile(file) {
         windowMain.addClass("window-main-filled");
 
         localStorage.setItem("text", fileReader.result);
-        localStorage.setItem("dificulty", "easy");
+        localStorage.setItem("difficulty", "easy");
         localStorage.setItem("number", 1);
 
         addEasySpans(content, applyEasyManipulations(fileReader.result, 1), 1);
@@ -32,15 +32,15 @@ function nextDifficulty() {
     if (difficulty == "easy") {
         localStorage.setItem("difficulty", "medium");
         $('.output').empty();
-        addMediumSpans(content, applyMediumManipulations(fileReader, number), number);
+        addMediumSpans(content, applyMediumManipulations(text, number), number);
     } else if (difficulty == "medium") {
         localStorage.setItem("difficulty", "hard");
         $('.output').empty();
-        addHardSpans(content, applyHardManipulations(fileReader, number), number);
+        addHardSpans(content, applyHardManipulations(text, number), number);
     } else if (difficulty == "hard"){
         localStorage.setItem("difficulty", "easy");
         $('.output').empty();
-        addEasySpans(content, applyEasyManipulations(fileReader.result, number), number);
+        addEasySpans(content, applyEasyManipulations(text, number), number);
     }
 }
 function applyManipulations(text) {
@@ -73,6 +73,12 @@ function addMediumSpans(element, text, x) {
         else if (x == 3) {
             // all under manipulations
         }
+
+        element.append(span)
+    
+        if (x == 1) {
+            element.append($("<br"));
+        }
     }
 } 
 
@@ -80,10 +86,10 @@ function applyMediumManipulations(text, x) {
     let newText = text;
 
     if (x == 1) {
-        // linespace
+        return text;
     }
     else if (x == 2) {
-        // all in span
+        return text;
     }
     else if (x == 3) {
         newText = addBonusWords(newText);
@@ -91,16 +97,11 @@ function applyMediumManipulations(text, x) {
         newText = randCapital(newText, 15);
         return newText;
     }
-
-    element.append(span)
-
-    if (x == 1) {
-        element.append($("<br"));
-    }
 }
 function applyEasyManipulations(text, number) {
     let newText = text;
     if (number == 1){
+        newText = addEmoji(newText);
         newText = mixLetters(newText, 50);
         return newText;
     } else if (number == 2){
@@ -149,7 +150,7 @@ function getFontWeight(element){
     element.css("font-weight", number);
 }
 
-function addHardSpans(text, number){
+function addHardSpans(element, text, number){
     for (const character of text) {
         let span = $(`<span></span>`).text(character)
         if (number == 1){
@@ -179,6 +180,7 @@ function applyHardManipulations(text,number) {
     let newText = text;
 
     if (number == 1){
+        newText = addEmoji(newText);
         newText = addBonusWords(newText);
         newText = mixLetters(newText, 15);
         // font weight linespace
