@@ -41,3 +41,8 @@ function addBackgroundColor(element) {
     let rgb = threeRandomNumbers();
     element.css("background-color", `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`);
 }
+
+function fontSize(element) {
+    let size = randomNumberBetween4And20();
+    element.css("font-size", size + "px");
+}
