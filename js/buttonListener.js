@@ -65,7 +65,8 @@ function addEasySpans(element, text, number) {
             addBackgroundColor(span);
             element.append(span);
         } else if (number == 2){
-            
+            getFontWeight(span);
+            element.append(span);
         } else if (number == 3) {
             randCapital(span, 50)
             addFontFamily(span);
