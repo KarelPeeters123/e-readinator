@@ -4,23 +4,9 @@ function threeRandomNumbers () {
     for (let i = 0; i < 3; i++) {
         array[i] = Math.floor(Math.random() * 266);
     }
-
-    console.log(array);
+    return array
 }
-
-<<<<<<< Updated upstream
 function randomNumberBetween4And20 () {
     let randomFontSize = Math.floor(Math.random() * 17) + 4;
-    console.log(randomFontSize);
+    return randomFontSize;
 }
-
-let x = randomNumberBetween4And20();
-=======
-function randomBetween4And20 () {
-    let fontSizeRandom = Math.floor(Math.random() * 17) + 4;
-    console.log (fontSizeRandom);
-}
-
-let x = randomBetween4And20();
->>>>>>> Stashed changes
-console.log(x);
