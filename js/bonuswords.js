@@ -3,6 +3,7 @@
 // string output
 
 function addBonusWords(input){
+    console.log(input);
     
     let stringArray = input.split(" "); // splits words into array
 
