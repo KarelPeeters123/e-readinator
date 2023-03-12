@@ -6,7 +6,13 @@ function threeRandomNumbers () {
     }
     return array
 }
+
 function randomNumberBetween4And20 () {
     let randomFontSize = Math.floor(Math.random() * 17) + 4;
     return randomFontSize;
+}
+
+function randomNumberBetween1And11 () {
+    let randomFontFam = Math.floor(Math.random() * 11);
+    return randomFontFam;
 }
