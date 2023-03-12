@@ -37,7 +37,11 @@ function addSpans(element, text) {
     for (const character of text) {
         let span = $(`<span></span>`).text(character)
         addBackgroundColor(span);
+<<<<<<< HEAD
         addColor(span);
+=======
+        getFontWeight(span)
+>>>>>>> 2ea972274b969e868bba77847bf7b56092e2a238
         element.append(span)
     }
 } 
@@ -45,7 +49,17 @@ function addBackgroundColor(element) {
     let rgb = threeRandomNumbers();
     element.css("background-color", `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`);
 }
+<<<<<<< HEAD
 function addColor(element) {
     let rgb = threeRandomNumbers();
     element.css("color", `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`);
 }
+=======
+function getFontWeight(element){
+    
+    number = Math.floor(Math.random() * (9- 1 + 1) + 1)
+    numver = number * 100;
+    
+    element.css("font-weight", number);
+}
+>>>>>>> 2ea972274b969e868bba77847bf7b56092e2a238
