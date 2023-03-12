@@ -25,6 +25,7 @@ function readFile(file) {
    fileReader.readAsText(file);
    console.log("TEST", originalText);
 }
+
 function applyManipulations(text) {
     let newText = text;
     newText = addEmoji(newText);
@@ -42,9 +43,45 @@ function addSpans(element, text) {
         element.append(span)
     }
 } 
+
+function applyEasyManipulations(text, number) {
+    let newText = text;
+    if (number == 1){
+        newText = mixLetters(newText, 50);
+        return newText;
+    } else if (number == 2){
+        newText = addEmoji(newText);
+        return newText;
+    } else if (number == 3) {
+        newText = addBonusWords(newText);
+        return newText;
+    }
+}
+function addEasySpans(element, text) {
+    for (const character of text) {
+        let span = $(`<span></span>`).text(character)
+        if (number == 1){
+            addBackgroundColor(span);
+            element.append(span);
+        } else if (number == 2){
+            
+        } else if (number == 3) {
+            randCapital(span, 50)
+            addFontFamily(span);
+            element.append(span);
+        }
+        
+    }
+} 
+
 function addBackgroundColor(element) {
     let rgb = threeRandomNumbers();
     element.css("background-color", `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`);
+}
+
+function addFontFamily(element) {
+    let nb = randomNumberBetween1And11();
+    element.addClass(`font${nb}`);
 }
 function addColor(element) {
     let rgb = threeRandomNumbers();
