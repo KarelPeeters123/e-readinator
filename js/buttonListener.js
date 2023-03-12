@@ -18,8 +18,9 @@ function readFile(file) {
         windowMain.addClass("window-main-filled");
 
         localStorage.setItem("text", fileReader.result);
-        originalText = fileReader.result;
-        addSpans(content, applyManipulations(fileReader.result));
+        localStorage.setItem("dificulty", "easy");
+
+        addEasySpans(content, applyEasyManipulations(fileReader.result, 1), 1);
     }
 
    fileReader.readAsText(file);
@@ -57,7 +58,7 @@ function applyEasyManipulations(text, number) {
         return newText;
     }
 }
-function addEasySpans(element, text) {
+function addEasySpans(element, text, number) {
     for (const character of text) {
         let span = $(`<span></span>`).text(character)
         if (number == 1){
