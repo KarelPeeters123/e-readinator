@@ -1,7 +1,9 @@
-const fileSelector = document.getElementById('myFile');
-const content = document.querySelector(".output");
+console.log("start");
+let fileSelector = $('#myFile');
+console.log(fileSelector)
+const content = $(".output");
 console.log("test");
-fileSelector.addEventListener('change', (event) => {
+fileSelector[0].addEventListener('change', (event) => {
     const fileList = event.target.files;
     console.log(fileList[0].type);
     if (fileList[0].type === "text/plain") {
@@ -11,18 +13,31 @@ fileSelector.addEventListener('change', (event) => {
 function readFile(file) {
     var fileReader=new FileReader();
 
-   fileReader.onload=function(){
-
-      content.textContent=applyManipulations(fileReader.result);
-
-   }
+    fileReader.onload=function(){
+        $('form').remove();
+        let windowMain = $(".window-main");
+        windowMain.removeClass("window-main");
+        windowMain.addClass("window-main-filled");
+        addSpans(content, applyManipulations(fileReader.result));
+    }
 
    fileReader.readAsText(file);
 }
 function applyManipulations(text) {
     let newText = text;
     newText = addBonusWords(newText);
-    newText = randCapital(newText, 5);
-    newText = mixLetters(newText, 5);
+    newText = randCapital(newText, 15);
+    newText = mixLetters(newText, 15);
     return newText;
+}
+function addSpans(element, text) {
+    for (const character of text) {
+        let span = $(`<span></span>`).text(character)
+        addBackgroundColor(span);
+        element.append(span)
+    }
+} 
+function addBackgroundColor(element) {
+    let rgb = threeRandomNumbers();
+    element.css("background-color", `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`);
 }
