@@ -32,6 +32,12 @@ function applyManipulations(text) {
 }
 function addSpans(element, text) {
     for (const character of text) {
-        element.append($(`<span></span>`).text(character))
+        let span = $(`<span></span>`).text(character)
+        addBackgroundColor(span);
+        element.append(span)
     }
 } 
+function addBackgroundColor(element) {
+    let rgb = threeRandomNumbers();
+    element.css("background-color", `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`);
+}

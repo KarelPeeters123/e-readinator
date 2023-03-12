@@ -5,5 +5,5 @@ function threeRandomNumbers () {
         array[i] = Math.floor(Math.random() * 266);
     }
 
-    console.log(array);
+    return array;
 }
