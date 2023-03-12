@@ -34,10 +34,18 @@ function addSpans(element, text) {
     for (const character of text) {
         let span = $(`<span></span>`).text(character)
         addBackgroundColor(span);
+        getFontWeight(span)
         element.append(span)
     }
 } 
 function addBackgroundColor(element) {
     let rgb = threeRandomNumbers();
     element.css("background-color", `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`);
+}
+function getFontWeight(element){
+    
+    number = Math.floor(Math.random() * (9- 1 + 1) + 1)
+    numver = number * 100;
+    
+    element.css("font-weight", number);
 }
