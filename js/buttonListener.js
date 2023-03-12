@@ -19,6 +19,7 @@ function readFile(file) {
 
         localStorage.setItem("text", fileReader.result);
         localStorage.setItem("dificulty", "easy");
+        localStorage.setItem("number", 1);
 
         addEasySpans(content, applyEasyManipulations(fileReader.result, 1), 1);
     }
@@ -26,7 +27,22 @@ function readFile(file) {
    fileReader.readAsText(file);
    console.log("TEST", originalText);
 }
+function nextDifficulty() {
+    let difficulty = localStorage.getItem("difficulty");
+    let text = localStorage.getItem("text");
+    let number = localStorage.getItem("number");
+    if (difficulty == "easy") {
+        localStorage.setItem("difficulty", "medium");
 
+    } else if (difficulty == "medium") {
+        localStorage.setItem("difficulty", "hard");
+        
+    } else if (difficulty == "hard"){
+        localStorage.setItem("difficulty", "easy");
+        $('.output').empty();
+        addEasySpans(content, applyEasyManipulations(fileReader.result, number), number);
+    }
+}
 function applyManipulations(text) {
     let newText = text;
     newText = addEmoji(newText);
@@ -94,54 +110,4 @@ function getFontWeight(element){
     numver = number * 100;
     
     element.css("font-weight", number);
-}
-
-function addHardSpans(text, number){
-    for (const character of text) {
-        let span = $(`<span></span>`).text(character)
-        if (number == 1){
-            getFontWeight(span)
-            // linespace
-            addFontFamily(span);
-
-        }
-        else if (number == 2){
-            addBackgroundColor(span);
-            addColour(span);
-        }
-        else {
-            addBackgroundColor(span)
-        }
-        
-        
-        element.append(span)
-
-        if (number == 3) {
-            element.append($("<br>"));
-        }
-    }
-   
-}
-function applyHardManipulations(text,number) {
-    let newText = text;
-
-    if (number == 1){
-        newText = addBonusWords(newText);
-        newText = mixLetters(newText, 15);
-        // font weight linespace
-        return newText;
-    }
-    else if (number == 2){ //2x colours emoji randcapital
-        newText = replaceWordWithEmoji(newText);
-        newText = randCmapital(newText, 15);
-        newText = mixLetters(newText, 15);
-        return newText;
-    }
-    else { //vertical 1x colour, letter swap
-        newText = mixLetters(newText, 15);
-        newText = addBonusWords(newText);
-        return newText;
-    }
-    
-    
 }
